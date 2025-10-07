@@ -1,0 +1,151 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+a {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a7ae2;
+}
+
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul.nav-links li a {
+  font-weight: 600;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a.active {
+  border-bottom: 2px solid #2a7ae2;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2a7ae2;
+}
+
+/* Tips Section */
+.tips-section {
+  padding: 4rem 0;
+}
+
+.tips-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #2a7ae2;
+}
+
+.tips-list {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.tips-list li {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #2a7ae2;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    height: calc(100% - 70px);
+    width: 200px;
+    background: white;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1001;
+  }
+
+  nav ul.nav-links.open {
+    right: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+  }
+}
